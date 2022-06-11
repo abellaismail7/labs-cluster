@@ -11,6 +11,7 @@ Router.events.on("routeChangeComplete", () => NProgress.done());
 Router.events.on("routeChangeError", () => NProgress.done());
 
 function MyApp({ Component, pageProps }) {
+  const isServer = () => typeof window === 'undefined';
   return (
     <RecoilRoot>
       <Component {...pageProps} />
